@@ -17,12 +17,18 @@ class BichoVirtual:
     def alterar_idade(self, idade: int) -> None:
         self.__idade = idade
 
-    def checar_humor(self):
-        pass
+    def checar_humor(self) -> str:
+        if (self.__fome <= 60 & self.__saude <= 60):
+            return "Está mal humorado"
+
+        if (self.__fome <= 30 & self.__saude <= 30):
+            return "Não está nada bem..."
+        
+        return "Está de bom humor"
         
     def __str__(self) -> str:
         text = "--------------------------------------------------\n"
-        text += f"[Informações sobre o Bicho Virtual]\nNome: {self.__nome}\nFome: {self.__fome:.2f}%\nSaúde: {self.__saude:.2f}%\nIdade: {self.__idade}%\n"
+        text += f"[Informações sobre o Bicho Virtual]\nNome: {self.__nome}\nFome: {self.__fome:.2f}%\nSaúde: {self.__saude:.2f}%\nIdade: {self.__idade}\n{self.checar_humor()}\n"
         text += "--------------------------------------------------"
         return text
 
