@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Template :D</title>
-</head>
-<body>
-    <h1>Oi através do template</h1>
-</body>
+  </head>
+
+  <body>
+    <h1>Disciplinas cursadas por {{ name }}</h1>
+    <h2>ID {{ id }}</h2>
+    <ul>
+      {% for discipline in disciplines %}
+        <li>{{ discipline }}</li>
+      {% endfor %}
+    </ul>
+  </body>
 </html>
